@@ -10,7 +10,7 @@ export const DocumentPreview = forwardRef<HTMLDivElement, DocumentPreviewProps>(
   return (
     <div className="print-container" ref={ref}>
       {/* Page 1 */}
-      <div className="page bg-white p-12 shadow-lg aspect-[1/1.414] text-black text-sm leading-relaxed mb-8 relative" style={{ fontSize: '15px' }}>
+      <div className="page bg-white p-12 shadow-lg aspect-[1/1.414] text-black text-sm leading-relaxed mb-8 relative print:shadow-none print:aspect-auto print:mb-0" style={{ fontSize: '15px' }}>
         <div className="flex items-center mb-6">
           <PeaLogo className="w-24 h-24" />
           <div className="ml-4">
@@ -69,7 +69,7 @@ export const DocumentPreview = forwardRef<HTMLDivElement, DocumentPreviewProps>(
       </div>
       
       {/* Page 2 */}
-      <div className="page bg-white p-12 shadow-lg aspect-[1/1.414] text-black text-sm leading-relaxed" style={{ fontSize: '15px' }}>
+      <div className="page bg-white p-12 shadow-lg aspect-[1/1.414] text-black text-sm leading-relaxed print:shadow-none print:aspect-auto" style={{ fontSize: '15px' }}>
         <div className="text-center font-bold text-lg mb-8 border-b-2 border-black pb-4">
           ช่องทางการชำระเงินค่าไฟฟ้า
         </div>
