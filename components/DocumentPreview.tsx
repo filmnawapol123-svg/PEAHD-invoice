@@ -1,6 +1,5 @@
 import React, { forwardRef } from 'react';
 import type { FormData } from '../types';
-import { PeaLogo } from './icons/PeaLogo';
 
 interface DocumentPreviewProps {
   formData: FormData;
@@ -11,18 +10,11 @@ export const DocumentPreview = forwardRef<HTMLDivElement, DocumentPreviewProps>(
     <div className="print-container" ref={ref}>
       {/* Page 1 */}
       <div className="page bg-white p-12 shadow-lg aspect-[1/1.414] text-black text-sm leading-relaxed mb-8 relative print:shadow-none print:aspect-auto print:mb-0" style={{ fontSize: '15px' }}>
-        <div className="flex items-center mb-6">
-          <PeaLogo className="w-24 h-24" />
-          <div className="ml-4">
-            <p className="font-bold">การไฟฟ้าส่วนภูมิภาค</p>
-            <p>PROVINCIAL ELECTRICITY AUTHORITY</p>
-          </div>
-        </div>
-
-        <div className="flex justify-between items-start mb-2">
+        
+        <div className="flex justify-between items-start mb-8 pt-8">
           <p>ที่ มท ๕๓๐๖.๔/หด(บร.)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/๒๕๖๘</p>
           <div className="text-right">
-            <p>การไฟฟ้าส่วนภูมิภาคอำเภอหางดง</p>
+            <p className="font-bold">การไฟฟ้าส่วนภูมิภาคอำเภอหางดง</p>
             <p>๑๙๗ หมู่ ๘ ตำบลหนองแก๋ว อำเภอหางดง</p>
             <p>จังหวัดเชียงใหม่ ๕๐๒๓๐</p>
           </div>
