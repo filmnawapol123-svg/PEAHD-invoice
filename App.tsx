@@ -11,6 +11,7 @@ const App: React.FC = () => {
     billAmount: '',
     address: '',
     letterDate: '',
+    subject: 'ขอให้ชำระค่าไฟฟ้าค้างชำระ',
   });
 
   const previewRef = useRef<HTMLDivElement>(null);

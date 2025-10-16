@@ -11,14 +11,16 @@ export const DocumentPreview = forwardRef<HTMLDivElement, DocumentPreviewProps>(
     <div className="print-container" ref={ref}>
       {/* Page 1 */}
       <div className="page bg-white p-12 shadow-lg aspect-[1/1.414] text-black text-sm leading-relaxed mb-8 relative" style={{ fontSize: '15px' }}>
-        <div className="flex justify-between items-start mb-6">
-          <div className="flex items-start space-x-4">
-            <PeaLogo className="w-24 h-24" />
-            <div>
-              <p className="font-bold">การไฟฟ้าส่วนภูมิภาค</p>
-              <p>PROVINCIAL ELECTRICITY AUTHORITY</p>
-            </div>
+        <div className="flex items-center mb-6">
+          <PeaLogo className="w-24 h-24" />
+          <div className="ml-4">
+            <p className="font-bold">การไฟฟ้าส่วนภูมิภาค</p>
+            <p>PROVINCIAL ELECTRICITY AUTHORITY</p>
           </div>
+        </div>
+
+        <div className="flex justify-between items-start mb-2">
+          <p>ที่ มท ๕๓๐๖.๔/หด(บร.)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/๒๕๖๘</p>
           <div className="text-right">
             <p>การไฟฟ้าส่วนภูมิภาคอำเภอหางดง</p>
             <p>๑๙๗ หมู่ ๘ ตำบลหนองแก๋ว อำเภอหางดง</p>
@@ -26,15 +28,12 @@ export const DocumentPreview = forwardRef<HTMLDivElement, DocumentPreviewProps>(
           </div>
         </div>
 
-        <div className="mb-8">
-            <p>ที่ มท ๕๓๐๖.๔/หด(บร.)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/๒๕๖๘</p>
-            <div className="text-center mt-[-1.5em]">
-              <p>{formData.letterDate}</p>
-            </div>
+        <div className="text-center mb-8">
+          <p>{formData.letterDate || '[วันที่ทำหนังสือ]'}</p>
         </div>
 
         <div className="mb-4">
-          <p><span className="font-bold">เรื่อง</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ขอให้ชำระค่าไฟฟ้าค้างชำระ</p>
+          <p><span className="font-bold">เรื่อง</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{formData.subject || '[เรื่อง]'}</p>
         </div>
         <div className="mb-6">
           <p><span className="font-bold">เรียน</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;คุณ {formData.customerName || '[ชื่อผู้ใช้ไฟฟ้า]'}</p>

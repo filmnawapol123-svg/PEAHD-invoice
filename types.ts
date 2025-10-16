@@ -4,4 +4,5 @@ export interface FormData {
   billAmount: string;
   address: string;
   letterDate: string;
+  subject: string;
 }
