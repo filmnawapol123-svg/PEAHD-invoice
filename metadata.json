@@ -1,0 +1,5 @@
+{
+  "name": "PEA Bill Notice Generator",
+  "description": "An application to generate a Provincial Electricity Authority (PEA) bill payment notice by filling in customer details, resembling the official document.",
+  "requestFramePermissions": []
+}
