@@ -21,8 +21,8 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen font-sarabun text-gray-800 p-4 sm:p-8 print:p-0 print:bg-white">
-      <main className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-8 print:block print:max-w-none">
+    <div className="bg-gray-100 min-h-screen font-sarabun text-gray-800 px-4 sm:px-8 print:p-0 print:bg-white">
+      <main className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-8 print:block print:max-w-none py-4 sm:py-8">
         <div className="lg:col-span-2 print:hidden">
           <div className="bg-white p-6 rounded-xl shadow-lg">
             <h1 className="text-2xl font-bold text-gray-700 mb-2">เครื่องมือสร้างใบแจ้งหนี้</h1>
