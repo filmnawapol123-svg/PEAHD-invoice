@@ -3,21 +3,28 @@ import { InputForm } from './components/InputForm';
 import { DocumentPreview } from './components/DocumentPreview';
 import type { FormData } from './types';
 import { PrintIcon } from './components/icons/PrintIcon';
+import { ClearIcon } from './components/icons/ClearIcon';
+
+const initialFormData: FormData = {
+  customerName: '',
+  customerNumber: '',
+  billAmount: '',
+  address: '',
+  letterDate: '',
+  subject: 'ขอให้ชำระค่าไฟฟ้าค้างชำระ',
+};
 
 const App: React.FC = () => {
-  const [formData, setFormData] = useState<FormData>({
-    customerName: '',
-    customerNumber: '',
-    billAmount: '',
-    address: '',
-    letterDate: '',
-    subject: 'ขอให้ชำระค่าไฟฟ้าค้างชำระ',
-  });
+  const [formData, setFormData] = useState<FormData>(initialFormData);
 
   const previewRef = useRef<HTMLDivElement>(null);
 
   const handlePrint = () => {
     window.print();
+  };
+
+  const handleClear = () => {
+    setFormData(initialFormData);
   };
 
   return (
@@ -28,13 +35,22 @@ const App: React.FC = () => {
             <h1 className="text-2xl font-bold text-gray-700 mb-2">เครื่องมือสร้างใบแจ้งหนี้</h1>
             <p className="text-gray-500 mb-6">กรุณากรอกข้อมูลเพื่อสร้างเอกสาร</p>
             <InputForm formData={formData} setFormData={setFormData} />
-            <button
-              onClick={handlePrint}
-              className="mt-6 w-full bg-blue-800 hover:bg-blue-900 text-white font-bold py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center space-x-2"
-            >
-              <PrintIcon />
-              <span>พิมพ์เอกสาร</span>
-            </button>
+            <div className="mt-6 flex items-center space-x-4">
+              <button
+                onClick={handlePrint}
+                className="w-full bg-blue-800 hover:bg-blue-900 text-white font-bold py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center space-x-2"
+              >
+                <PrintIcon />
+                <span>พิมพ์เอกสาร</span>
+              </button>
+              <button
+                onClick={handleClear}
+                className="w-full bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center space-x-2"
+              >
+                <ClearIcon />
+                <span>ล้างข้อมูล</span>
+              </button>
+            </div>
           </div>
         </div>
         <div className="lg:col-span-3">
